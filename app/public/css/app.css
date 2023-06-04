@@ -54,3 +54,19 @@
    padding: 10px;
    text-align: center;
  }
+
+  /* Mídia query para dispositivos com largura menor que 480px */
+  @media (max-width: 480px) {
+    header {
+      padding: 10px;
+    }
+
+    header nav ul {
+      flex-direction: column;
+    }
+
+    header nav ul li {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
