@@ -40,26 +40,52 @@
     </div>
   </section>
 
-  <!-- SECTION PROJECTS -->
-  <section id="projetos" class="bg-light py-5">
-    <div class="container">
-      <h2>Projetos</h2>
-      <button id="addProjectButton" type="button">Adicionar Projeto</button>
-    </div>
+  <div class="container">
+    <h2>Projetos</h2>
+    <button id="addProjectButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
+      data-bs-target="#projectModal">Adicionar Projeto</button>
+  </div>
 
-    <!-- MODAL -->
-    <div id="projectModal" class="modal">
+  <!-- MODAL Projects -->
+  <div id="projectModal" class="modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="projectForm">
-          <!-- Campos do formulário para inserir detalhes do projeto -->
-          <input type="text" id="projectName" placeholder="Nome do Projeto" required>
-          <input type="text" id="projectDescription" placeholder="Descrição do Projeto" required>
-          <input type="text" id="projectLink" placeholder="Link do Projeto" required>
-          <button type="submit">Salvar</button>
-        </form>
+
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="projectModalLabel">Adicionar Projeto</h5>
+        </div>
+
+        <div class="modal-body">
+          <form id="projectForm">
+            <div class="mb-3">
+              <label for="projectName" class="form-label">Nome do Projeto</label>
+              <input type="text" id="projectName" class="form-control" placeholder="Nome do Projeto" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="projectDescription" class="form-label">Descrição do Projeto</label>
+              <input type="text" id="projectDescription"  class="form-control" placeholder="Descrição do Projeto" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="projectLink" class="form-label">Link do Projeto</label>
+              <input type="text" id="projectLink" class="form-control" placeholder="Link do Projeto" required>
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+              <button class="btn btn-primary" type="submit">Salvar</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- SECTION PROJECTS -->
+  <section id="projetos" class="bg-light py-5">
     
   </section>
 
