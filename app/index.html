@@ -44,17 +44,23 @@
   <section id="projetos" class="bg-light py-5">
     <div class="container">
       <h2>Projetos</h2>
-      <div class="projeto">
-        <img src="caminho-para-projeto1.png" alt="Projeto 1">
-        <h3>Projeto 1</h3>
-        <p>Descrição breve do projeto 1</p>
-      </div>
-      <div class="projeto">
-        <img src="caminho-para-projeto2.png" alt="Projeto 2">
-        <h3>Projeto 2</h3>
-        <p>Descrição breve do projeto 2</p>
+      <button id="addProjectButton" type="button">Adicionar Projeto</button>
+    </div>
+
+    <!-- MODAL -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="projectForm">
+          <!-- Campos do formulário para inserir detalhes do projeto -->
+          <input type="text" id="projectName" placeholder="Nome do Projeto" required>
+          <input type="text" id="projectDescription" placeholder="Descrição do Projeto" required>
+          <input type="text" id="projectLink" placeholder="Link do Projeto" required>
+          <button type="submit">Salvar</button>
+        </form>
       </div>
     </div>
+    
   </section>
 
   <!-- SECTION CLIENT TESTIMONIALS -->
@@ -83,6 +89,8 @@
   <footer>
     <p>&copy; 2023 Seu Nome</p>
   </footer>
+
+  <script src="public/javascript/app.js"></script>
 </body>
 
 </html>
