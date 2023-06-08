@@ -1,12 +1,12 @@
 // Obtenha os elementos do DOM
 const addProjectButton = document.getElementById('addProjectButton');
 const projectModal = document.getElementById('projectModal');
-const closeButton = document.getElementsByClassName('close')[0];
+const closeButton = document.getElementsByClassName('btn btn-secondary')[0];
 const projectForm = document.getElementById('projectForm');
 
 // Abrir o modal ao clicar no botão "Adicionar Projeto"
 addProjectButton.addEventListener('click', () => {
-  projectModal.style.display = 'block';
+  projectModal.style.display = 'flex';
 });
 
 // Fechar o modal ao clicar no botão de fechar (X)
