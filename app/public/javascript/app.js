@@ -60,6 +60,14 @@ function preencherCamposDoModal() {
   putProjectNameInput.value = projetoAtual.nome;
   putProjectDescriptionInput.value = projetoAtual.descricao;
   putProjectLinkInput.value = projetoAtual.link;
+
+  const closeButton = document.querySelector('#putModal .btn-secondary');
+
+  // Fechar o modal ao clicar no botão de fechar (X)
+  closeButton.addEventListener('click', () => {
+    putModal.style.display = 'none';
+  });
+
 }
 
 // Adicione o evento de clique ao container dos projetos
