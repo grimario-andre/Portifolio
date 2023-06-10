@@ -46,7 +46,7 @@
       data-bs-target="#projectModal">Adicionar Projeto</button>
   </div>
 
-  <!-- MODAL Projects -->
+  <!-- POST MODAL Projects -->
   <div id="projectModal" class="modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
 
@@ -84,10 +84,49 @@
     </div>
   </div>
 
+  <!-- PUT MODAL Projects -->
+  <div id="putModal" class="modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="projectModalLabel">Alterar Projeto</h5>
+        </div>
+
+        <div class="modal-body">
+          <form id="projectForm">
+            <div class="mb-3">
+              <label for="projectName" class="form-label">Novo Nome do Projeto</label>
+              <input type="text" id="putProjectName" class="form-control" placeholder="Nome do Projeto" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="projectDescription" class="form-label">Nova Descrição do Projeto</label>
+              <input type="text" id="putProjectDescription"  class="form-control" placeholder="Descrição do Projeto" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="projectLink" class="form-label">Novo Link do Projeto</label>
+              <input type="text" id="putProjectLink" class="form-control" placeholder="Link do Projeto" required>
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+              <button class="btn btn-primary" id="salvarAlteracoes">Salvar Alterações</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- SECTION PROJECTS -->
   <section id="projetos" class="bg-light py-5">
-    
+  
   </section>
+
 
   <!-- SECTION CLIENT TESTIMONIALS -->
   <section id="sobre" class="py-5">
@@ -117,6 +156,7 @@
   </footer>
 
   <script src="public/javascript/app.js"></script>
+  
 </body>
 
 </html>
