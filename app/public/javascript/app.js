@@ -29,6 +29,7 @@ projectForm.addEventListener('submit', (e) => {
     <h2>${projectName}</h2>
     <p>${projectDescription}</p>
     <a href="${projectLink}">Ver projeto</a>
+    <button class="btn btn-alterar">Alterar</button>
   `;
 
   // Adicionar o novo projeto à seção de projetos
@@ -40,4 +41,66 @@ projectForm.addEventListener('submit', (e) => {
 
   // Fechar o modal
   projectModal.style.display = 'none';
+});
+
+
+// Obtendo os elementos do DOM
+const putModal = document.getElementById('putModal');
+const salvarAlteracoesButton = document.getElementById('salvarAlteracoes');
+const putProjectNameInput = document.getElementById('putProjectName');
+const putProjectDescriptionInput = document.getElementById('putProjectDescription');
+const putProjectLinkInput = document.getElementById('putProjectLink');
+const projectsSection = document.getElementById('projetos');
+
+// Variável para armazenar o projeto atual
+let projetoAtual;
+
+// Função para preencher os campos do modal de alteração com os valores atuais do projeto
+function preencherCamposDoModal() {
+  putProjectNameInput.value = projetoAtual.nome;
+  putProjectDescriptionInput.value = projetoAtual.descricao;
+  putProjectLinkInput.value = projetoAtual.link;
+}
+
+// Adicione o evento de clique ao container dos projetos
+projectsSection.addEventListener('click', (e) => {
+  // Verifique se o botão de alteração foi clicado
+  if (e.target.classList.contains('btn-alterar')) {
+    // Obtenha os valores atuais do projeto
+    projetoAtual = {
+      nome: e.target.parentNode.querySelector('h2').textContent,
+      descricao: e.target.parentNode.querySelector('p').textContent,
+      link: e.target.parentNode.querySelector('a').href
+    };
+
+    preencherCamposDoModal();
+    putModal.style.display = 'flex';
+  }
+});
+
+// Salvar as alterações ao clicar no botão "Salvar Alterações"
+salvarAlteracoesButton.addEventListener('click', () => {
+  const novoNome = putProjectNameInput.value;
+  const novaDescricao = putProjectDescriptionInput.value;
+  const novoLink = putProjectLinkInput.value;
+
+  // Atualizar os valores do projeto atual
+  projetoAtual.nome = novoNome;
+  projetoAtual.descricao = novaDescricao;
+  projetoAtual.link = novoLink;
+
+  // Criar um novo elemento section com os detalhes atualizados do projeto
+  const projetoAtualizado = document.createElement('section');
+  projetoAtualizado.innerHTML = `
+    <h2>${projetoAtual.nome}</h2>
+    <p>${projetoAtual.descricao}</p>
+    <a href="${projetoAtual.link}">Ver projeto</a>
+    <button class="btn btn-primary btn-alterar" data-bs-toggle="modal" data-bs-target="#putModal">Alterar</button>
+  `;
+
+  // Substituir o elemento anterior pelo projeto atualizado na seção de projetos
+  projectsSection.replaceChild(projetoAtualizado, projectsSection.firstChild);
+
+  // Fechar o modal de alteração
+  putModal.style.display = 'none';
 });
