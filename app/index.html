@@ -114,7 +114,45 @@
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 
-              <button class="btn btn-primary" id="salvarAlteracoes">Salvar Alterações</button>
+              <button class="btn btn-primary" id="salvarAlteracoes">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELETE MODAL Projects -->
+  <div id="deleteModal" class="modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="projectModalLabel">Deletar Projeto</h5>
+        </div>
+
+        <div class="modal-body">
+          <form id="projectForm">
+            <div class="mb-3">
+              <label for="projectName" class="form-label">Nome do Projeto</label>
+              <input type="text" id="deleteProjectName" class="form-control" placeholder="Nome do Projeto" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="projectDescription" class="form-label">Descrição do Projeto</label>
+              <input type="text" id="deleteProjectDescription"  class="form-control" placeholder="Descrição do Projeto" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="projectLink" class="form-label">Link do Projeto</label>
+              <input type="text" id="deleteProjectLink" class="form-control" placeholder="Link do Projeto" required>
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+              <button class="btn btn-primary" id="deletarProjeto">Deletar</button>
             </div>
           </form>
         </div>
