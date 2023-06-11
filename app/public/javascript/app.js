@@ -1,4 +1,4 @@
-// Obtenha os elementos do DOM
+// Obtenha os elementos do DOM POST
 const addProjectButton = document.getElementById('addProjectButton');
 const projectModal = document.getElementById('projectModal');
 const closeButton = document.getElementsByClassName('btn btn-secondary')[0];
@@ -30,6 +30,7 @@ projectForm.addEventListener('submit', (e) => {
     <p>${projectDescription}</p>
     <a href="${projectLink}">Ver projeto</a>
     <button class="btn btn-alterar">Alterar</button>
+    <button class="btn btn-deletar">Deletar</button>
   `;
 
   // Adicionar o novo projeto à seção de projetos
@@ -44,7 +45,7 @@ projectForm.addEventListener('submit', (e) => {
 });
 
 
-// Obtendo os elementos do DOM
+// Obtendo os elementos do DOM PUT
 const putModal = document.getElementById('putModal');
 const salvarAlteracoesButton = document.getElementById('salvarAlteracoes');
 const putProjectNameInput = document.getElementById('putProjectName');
@@ -56,7 +57,7 @@ const projectsSection = document.getElementById('projetos');
 let projetoAtual;
 
 // Função para preencher os campos do modal de alteração com os valores atuais do projeto
-function preencherCamposDoModal() {
+function preencherCamposDoModalAlterar() {
   putProjectNameInput.value = projetoAtual.nome;
   putProjectDescriptionInput.value = projetoAtual.descricao;
   putProjectLinkInput.value = projetoAtual.link;
@@ -81,7 +82,7 @@ projectsSection.addEventListener('click', (e) => {
       link: e.target.parentNode.querySelector('a').href
     };
 
-    preencherCamposDoModal();
+    preencherCamposDoModalAlterar();
     putModal.style.display = 'flex';
   }
 });
@@ -104,6 +105,7 @@ salvarAlteracoesButton.addEventListener('click', () => {
     <p>${projetoAtual.descricao}</p>
     <a href="${projetoAtual.link}">Ver projeto</a>
     <button class="btn btn-primary btn-alterar" data-bs-toggle="modal" data-bs-target="#putModal">Alterar</button>
+    <button class="btn btn-primary btn-deletar" data-bs-toggle="modal" data-bs-target="#putModal">Deletar</button>
   `;
 
   // Substituir o elemento anterior pelo projeto atualizado na seção de projetos
@@ -111,4 +113,60 @@ salvarAlteracoesButton.addEventListener('click', () => {
 
   // Fechar o modal de alteração
   putModal.style.display = 'none';
+
+  alert('Projeto Alterado');
 });
+
+// Obtendo os elementos DOM DELETE
+const deleteModal = document.getElementById('deleteModal');
+const deletarAlteracoesButton = document.getElementById('deletarProjeto');
+const deleteProjectNameInput = document.getElementById('deleteProjectName');
+const deleteProjectDescriptionInput = document.getElementById('deleteProjectDescription');
+const deleteProjectLinkInput = document.getElementById('deleteProjectLink');
+
+// Função para preencher os campos do modal de alteração com os valores atuais do projeto
+function preencherCamposDoModalDeletar(){
+  deleteProjectNameInput.value = projetoAtual.nome;
+  deleteProjectDescriptionInput.value = projetoAtual.descricao;
+  deleteProjectLinkInput.value = projetoAtual.link;
+
+  const closeButton = document.querySelector('#deleteModal .btn-secondary');
+
+  // Fechar o modal ao clicar no botão de fechar (x)
+  closeButton.addEventListener('click', () =>{
+    deleteModal.style.display= 'none';
+  });
+
+}
+
+// Adicione o evento de clique ao container dos projetos
+projectsSection.addEventListener('click', (e) => {
+  // Verifique se o botão de deletar fois clicado
+  if (e.target.classList.contains('btn-deletar')) {
+    // Obetnha os valores atuais do projeto
+    projetoAtual = {
+      nome:     e.target.parentNode.querySelector('h2').textContent,
+      descricao: e.target.parentNode.querySelector('p').textContent,
+      link:     e.target.parentNode.querySelector('a').href
+    }
+
+    preencherCamposDoModalDeletar();
+    deleteModal.style.display = 'flex';
+  }
+});
+
+// Adicione o evento de clique ao botão de "Deletar"
+deletarAlteracoesButton.addEventListener('click', () => {
+  // A lógica para deletar o projeto
+  const projeto = document.querySelector(`#projetos a[href='${projetoAtual.link}']`);
+  if (projeto) {
+    projeto.parentElement.remove(); 
+  }
+
+  alert('Projeto Excluído');
+
+  // Feche o modal de deleção
+  deleteModal.style.display = 'none';
+});
+
+
