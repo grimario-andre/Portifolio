@@ -40,6 +40,7 @@
     </div>
   </section>
 
+  <!-- Add ProjectButton -->
   <div class="container">
     <h2>Projetos</h2>
     <button id="addProjectButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -165,14 +166,60 @@
   
   </section>
 
+  <!-- Add Testimonial Button -->
+  <div class="container">
+    <h2>Depoimentos</h2>
+    <button id="addTestimonialButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
+      data-bs-target="#testimonialModal">Adicionar depoimento</button>
+  </div>
+
+  <!-- SECTION POST TESTIMONIALS -->
+  <div id="testimonialModal" class="modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="testimonialModalLabel">Adicionar Depoimento</h5>
+        </div>
+
+        <div class="modal-body">
+          <form id="testimonialForm">
+            <div class="mb-3">
+              <label for="testimonialName" class="form-label">Nome da Raferência</label>
+              <input type="text" id="testimonialName" class="form-control" placeholder="Nome da Referência" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="professionReference" class="form-label">Profissão</label>
+              <input type="text" id="professionReference"  class="form-control" placeholder="Profissão" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="testimonialDescription" class="form-label">Depoimento</label>
+              <input type="text" id="testimonialDescription"  class="form-control" placeholder="Depoimento" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="testimonialLink" class="form-label">Link do Projeto</label>
+              <input type="text" id="testimonialLink" class="form-control" placeholder="Link da Referência" required>
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary testimonialButton" data-bs-dismiss="modal">Fechar</button>
+
+              <button class="btn btn-primary" type="submit">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- SECTION CLIENT TESTIMONIALS -->
-  <section id="sobre" class="py-5">
-    <div class="container">
-      <h2>Sobre</h2>
-      <p>Se possível, inclua depoimentos de clientes satisfeitos ou recomendações de pessoas com quem você trabalhou
-        anteriormente. </p>
-    </div>
+  <section id="testimonial" class="py-5">
+    
   </section>
 
   <!-- SECTION CONTACT -->
@@ -194,6 +241,7 @@
   </footer>
 
   <script src="public/javascript/app.js"></script>
+  <script src="public/javascript/testimonialScript.js"></script>
   
 </body>
 

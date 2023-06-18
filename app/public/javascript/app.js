@@ -9,7 +9,7 @@ addProjectButton.addEventListener('click', () => {
   projectModal.style.display = 'flex';
 });
 
-// Fechar o modal ao clicar no botão de fechar (X)
+// Fechar o modal ao clicar no botão de fechar
 closeButton.addEventListener('click', () => {
   projectModal.style.display = 'none';
 });
@@ -168,5 +168,8 @@ deletarAlteracoesButton.addEventListener('click', () => {
   // Feche o modal de deleção
   deleteModal.style.display = 'none';
 });
+
+
+// ----------------------------------------------------------------------------------
 
 
