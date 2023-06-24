@@ -173,7 +173,7 @@
       data-bs-target="#testimonialModal">Adicionar depoimento</button>
   </div>
 
-  <!-- SECTION POST TESTIMONIALS -->
+  <!-- POST MODAL TESTIMONIALS -->
   <div id="testimonialModal" class="modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
 
@@ -216,6 +216,49 @@
     </div>
   </div>
 
+  <!-- PUT MODAL TESTIMONIALS  -->
+  <div id="putTestimonialModal" class="modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="testimonialModalLabel">Alterar Depoimento</h5>
+        </div>
+
+        <div class="modal-body">
+          <form id="testimonialForm">
+            <div class="mb-3">
+              <label for="putTestimonialName" class="form-label">Nome da Raferência</label>
+              <input type="text" id="putTestimonialName" class="form-control" placeholder="" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="putTestimonialProfessionReference" class="form-label">Profissão</label>
+              <input type="text" id="putTestimonialProfessionReference"  class="form-control" placeholder="" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="putTestimonialDescription" class="form-label">Depoimento</label>
+              <input type="text" id="putTestimonialDescription"  class="form-control" placeholder="" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="putTestimonialLink" class="form-label">Link do Projeto</label>
+              <input type="text" id="putTestimonialLink" class="form-control" placeholder="" required>
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary testimonialButton" data-bs-dismiss="modal">Fechar</button>
+
+              <button class="btn btn-primary" id="salvarAlteracoesTestimonial">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <!-- SECTION CLIENT TESTIMONIALS -->
   <section id="testimonial" class="py-5">
