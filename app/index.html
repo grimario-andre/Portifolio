@@ -258,6 +258,49 @@
       </div>
     </div>
   </div>
+
+  <!-- DELETE MODAL TESTIMONIALS  -->
+  <div id="deleteTestimonialModal" class="modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="testimonialModalLabel">Excluir Depoimento</h5>
+        </div>
+
+        <div class="modal-body">
+          <form id="testimonialForm">
+            <div class="mb-3">
+              <label for="deleteTestimonialName" class="form-label">Nome da Raferência</label>
+              <input type="text" id="deleteTestimonialName" class="form-control" placeholder="" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="deleteTestimonialProfessionReference" class="form-label">Profissão</label>
+              <input type="text" id="deleteTestimonialProfessionReference"  class="form-control" placeholder="" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="deleteTestimonialDescription" class="form-label">Depoimento</label>
+              <input type="text" id="deleteTestimonialDescription"  class="form-control" placeholder="" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="deleteTestimonialLink" class="form-label">Link do Projeto</label>
+              <input type="text" id="deleteTestimonialLink" class="form-control" placeholder="" required>
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary testimonialButton" data-bs-dismiss="modal">Fechar</button>
+
+              <button class="btn btn-primary" id="deletarTestimonial">Deletar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
   <!-- SECTION CLIENT TESTIMONIALS -->
