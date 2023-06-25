@@ -87,13 +87,11 @@ testimonialSection.addEventListener('click', (e) =>{
             descricao: e.target.parentNode.querySelector('p').textContent,
             link: e.target.parentNode.querySelector('a').href,
         }
-
         preencherCamposDoModalAlterarTestimonial();
         putTestimonialModal.style.display = 'flex';
     }
-
+    
 });
-
 
 // Salvar as alterações ao clicar no botão "Salvar Alterações
 salvarAlteracoesTestimonial.addEventListener('click', ()=>{
@@ -162,10 +160,10 @@ testimonialSection.addEventListener('click', (e) => {
             descricao: e.target.parentNode.querySelector('p').textContent,
             link: e.target.parentNode.querySelector('a').href,
         }
-    }
 
-    preencherCamposDoModalDeletarTestimonial();
-    deleteTestimonialModal.style.display = 'flex';
+        preencherCamposDoModalDeletarTestimonial();
+        deleteTestimonialModal.style.display = 'flex';
+    }
 });
 
 
