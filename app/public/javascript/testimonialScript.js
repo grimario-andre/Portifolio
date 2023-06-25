@@ -48,6 +48,7 @@ testimonialForm.addEventListener('submit', (e) => {
 
 });
 
+
 // Obtendo os elementos do DOM PUT
 const putTestimonialModal = document.getElementById('putTestimonialModal');
 const salvarAlteracoesTestimonial = document.getElementById('salvarAlteracoesTestimonial');
@@ -66,7 +67,7 @@ function preencherCamposDoModalAlterarTestimonial() {
     putTestimonialProfissionReferenceInput.value = testimonialAtual.profissao;
     putTestimonialDescriptionInput.value = testimonialAtual.descricao;
     putTestimonialLinkInput.value = testimonialAtual.link;
-
+  
     const closeButton = document.querySelector('#putTestimonialModal .putTestimonialButton');
 
     // Fechar o modal ao clicar no botão de fechar (X)
@@ -77,7 +78,7 @@ function preencherCamposDoModalAlterarTestimonial() {
 }
 
 // Adicione o evento de clique ao container dos projetos
-testimonialSection.addEventListener('click', (e)=>{
+testimonialSection.addEventListener('click', (e) =>{
     // Verifique se o botão de alteração foi clicado
     if (e.target.classList.contains('btn-alterar')) {
         testimonialAtual = {
@@ -119,10 +120,66 @@ salvarAlteracoesTestimonial.addEventListener('click', ()=>{
     `;
 
     // Substituir o elemento anterior pelo projeto atualizado na seção de projetos
-    putTestimonialSection.replaceChild(testimonialAtulizado, putTestimonialSection.firstChild);
+    testimonialSection.replaceChild(testimonialAtulizado, testimonialSection.firstChild);
 
     // Fechar o modal de alteração
     putTestimonialModal.style.display = 'none';
 
     alert('Depoimento Alterado');
 });
+
+
+// Obtendo os elementos DOM DELETE
+const deleteTestimonialModal = document.getElementById('deleteTestimonialModal');
+const deleteTestimonialButton = document.getElementById('deletarTestimonial');
+const deleteTestimonialNameInput = document.getElementById('deleteTestimonialName');
+const deleteTestimonialProfissionReferenceInput = document.getElementById('deleteTestimonialProfessionReference');
+const deleteTestimonialDescriptionInput = document.getElementById('deleteTestimonialDescription');
+const deleteTestimonialLinkInput = document.getElementById('deleteTestimonialLink');
+
+function preencherCamposDoModalDeletarTestimonial(){
+    deleteTestimonialNameInput.value = testimonialAtual.nome;
+    deleteTestimonialProfissionReferenceInput.value = testimonialAtual.profissao;
+    deleteTestimonialDescriptionInput.value = testimonialAtual.descricao;
+    deleteTestimonialLinkInput.value = testimonialAtual.link;
+
+    const closeButton = document.querySelector('#deleteTestimonialModal .testimonialButton');
+
+    // Fechar o modal ao clicar no botão de fechar (x)
+    closeButton.addEventListener('click', ()=>{
+        deleteTestimonialModal.style.display = 'none';
+    });
+}
+
+// Adicione o evento de clique ao container dos projetos
+testimonialSection.addEventListener('click', (e) => {
+    // Verifique se o botão de deletar fois clicado
+    if (e.target.classList.contains('btn-deletar')) {
+        // Obter os valores atuais do depoimento
+        testimonialAtual = {
+            nome: e.target.parentNode.querySelector('h2').textContent,
+            profissao: e.target.parentNode.querySelector('h4').textContent,
+            descricao: e.target.parentNode.querySelector('p').textContent,
+            link: e.target.parentNode.querySelector('a').href,
+        }
+    }
+
+    preencherCamposDoModalDeletarTestimonial();
+    deleteTestimonialModal.style.display = 'flex';
+});
+
+
+// Adicione o evento de clique ao botão de "Deletar"
+deleteTestimonialButton.addEventListener('click', () => {
+    // A lógica para deletar o projeto
+    const depoimento = document.querySelector(`#testimonial a[href='${testimonialAtual.link}']`);
+    if (depoimento) {
+        depoimento.parentElement.remove(); 
+    }
+
+    // Feche o modal de deleção
+    deleteTestimonialModal.style.display = 'none';
+
+    alert('Depoimento Excluído');
+  });
+
