@@ -68,7 +68,7 @@ function preencherCamposDoModalAlterarTestimonial() {
     putTestimonialDescriptionInput.value = testimonialAtual.descricao;
     putTestimonialLinkInput.value = testimonialAtual.link;
 
-    const closeButton = document.querySelector('#putTestimonialModal .testimonialButton');
+    const closeButton = document.querySelector('#putTestimonialModal .putTestimonialButton');
 
     // Fechar o modal ao clicar no botão de fechar (X)
     closeButton.addEventListener('click', () => {
@@ -86,10 +86,10 @@ testimonialSection.addEventListener('click', (e) =>{
             descricao: e.target.parentNode.querySelector('p').textContent,
             link: e.target.parentNode.querySelector('a').href,
         }
-    }
 
-    preencherCamposDoModalAlterarTestimonial();
-    putTestimonialModal.style.display = 'flex';
+        preencherCamposDoModalAlterarTestimonial();
+        putTestimonialModal.style.display = 'flex';
+    }
 });
 
 // Salvar as alterações ao clicar no botão "Salvar Alterações
@@ -159,10 +159,10 @@ testimonialSection.addEventListener('click', (e) => {
             descricao: e.target.parentNode.querySelector('p').textContent,
             link: e.target.parentNode.querySelector('a').href,
         }
-    }
 
-    preencherCamposDoModalDeletarTestimonial();
-    deleteTestimonialModal.style.display = 'flex';
+        preencherCamposDoModalDeletarTestimonial();
+        deleteTestimonialModal.style.display = 'flex';
+    }
 });
 
 
