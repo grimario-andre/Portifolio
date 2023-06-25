@@ -37,7 +37,7 @@ testimonialForm.addEventListener('submit', (e) => {
     `;
 
     // Adicionar o depoimento a seção
-    const testimonialSection = document.getElementById('testimonial');
+    const testimonialSection = document.getElementById('testimonials');
     testimonialSection.appendChild(newTestimonialSection);
 
     // Limpar formulário
@@ -56,7 +56,7 @@ const putTestimonialNameInput = document.getElementById('putTestimonialName');
 const putTestimonialProfissionReferenceInput = document.getElementById('putTestimonialProfessionReference');
 const putTestimonialDescriptionInput = document.getElementById('putTestimonialDescription');
 const putTestimonialLinkInput = document.getElementById('putTestimonialLink');
-const testimonialSection = document.getElementById('testimonial');
+const testimonialSection = document.getElementById('testimonials');
 
 // Variável para armazenar o projeto atual
 let testimonialAtual;
@@ -67,13 +67,14 @@ function preencherCamposDoModalAlterarTestimonial() {
     putTestimonialProfissionReferenceInput.value = testimonialAtual.profissao;
     putTestimonialDescriptionInput.value = testimonialAtual.descricao;
     putTestimonialLinkInput.value = testimonialAtual.link;
-
+  
     const closeButton = document.querySelector('#putTestimonialModal .putTestimonialButton');
 
     // Fechar o modal ao clicar no botão de fechar (X)
     closeButton.addEventListener('click', () => {
         putTestimonialModal.style.display = 'none';
     });
+    
 }
 
 // Adicione o evento de clique ao container dos projetos
@@ -86,17 +87,17 @@ testimonialSection.addEventListener('click', (e) =>{
             descricao: e.target.parentNode.querySelector('p').textContent,
             link: e.target.parentNode.querySelector('a').href,
         }
-
         preencherCamposDoModalAlterarTestimonial();
         putTestimonialModal.style.display = 'flex';
     }
+    
 });
 
 // Salvar as alterações ao clicar no botão "Salvar Alterações
 salvarAlteracoesTestimonial.addEventListener('click', ()=>{
     const novoNome = putTestimonialNameInput.value;
     const novaProfissao = putTestimonialProfissionReferenceInput.value;
-    const novaDescricao = putTestimonialDescriptionInput.calue;
+    const novaDescricao = putTestimonialDescriptionInput.value;
     const novoLink = putTestimonialLinkInput.value;
 
     // Atualizar os valores do depoimento
@@ -112,8 +113,8 @@ salvarAlteracoesTestimonial.addEventListener('click', ()=>{
         <h4>${professionReference}</h4>
         <p>${testimonialDescription}</p>
         <a href="${testimonialLink}">Ver projeto</a>
-        <button class="btn btn-alterar">Alterar</button>
-        <button class="btn btn-deletar">Deletar</button>
+        <button class="btn btn-primary btn-alterar" data-bs-toggle="modal" data-bs-target="#putTestimonialModal">Alterar</button>
+        <button class="btn btn-primary btn-deletar" data-bs-toggle="modal" data-bs-target="#putTestimonialModal">Deletar</button>
     `;
 
     // Substituir o elemento anterior pelo projeto atualizado na seção de projetos
