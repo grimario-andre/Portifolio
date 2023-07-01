@@ -66,7 +66,8 @@
 
             <div class="mb-3">
               <label for="projectDescription" class="form-label">Descrição do Projeto</label>
-              <input type="text" id="projectDescription"  class="form-control" placeholder="Descrição do Projeto" required>
+              <input type="text" id="projectDescription" class="form-control" placeholder="Descrição do Projeto"
+                required>
             </div>
 
             <div class="mb-3">
@@ -104,7 +105,8 @@
 
             <div class="mb-3">
               <label for="projectDescription" class="form-label">Nova Descrição do Projeto</label>
-              <input type="text" id="putProjectDescription"  class="form-control" placeholder="Descrição do Projeto" required>
+              <input type="text" id="putProjectDescription" class="form-control" placeholder="Descrição do Projeto"
+                required>
             </div>
 
             <div class="mb-3">
@@ -142,7 +144,8 @@
 
             <div class="mb-3">
               <label for="projectDescription" class="form-label">Descrição do Projeto</label>
-              <input type="text" id="deleteProjectDescription"  class="form-control" placeholder="Descrição do Projeto" required>
+              <input type="text" id="deleteProjectDescription" class="form-control" placeholder="Descrição do Projeto"
+                required>
             </div>
 
             <div class="mb-3">
@@ -163,7 +166,7 @@
 
   <!-- SECTION PROJECTS -->
   <section id="projetos" class="bg-light py-5">
-  
+
   </section>
 
   <!-- Add Testimonial Button -->
@@ -192,12 +195,12 @@
 
             <div class="mb-3">
               <label for="professionReference" class="form-label">Profissão</label>
-              <input type="text" id="professionReference"  class="form-control" placeholder="Profissão" required>
+              <input type="text" id="professionReference" class="form-control" placeholder="Profissão" required>
             </div>
 
             <div class="mb-3">
               <label for="testimonialDescription" class="form-label">Depoimento</label>
-              <input type="text" id="testimonialDescription"  class="form-control" placeholder="Depoimento" required>
+              <input type="text" id="testimonialDescription" class="form-control" placeholder="Depoimento" required>
             </div>
 
             <div class="mb-3">
@@ -235,12 +238,12 @@
 
             <div class="mb-3">
               <label for="putTestimonialProfessionReference" class="form-label">Profissão</label>
-              <input type="text" id="putTestimonialProfessionReference"  class="form-control" placeholder="" required>
+              <input type="text" id="putTestimonialProfessionReference" class="form-control" placeholder="" required>
             </div>
 
             <div class="mb-3">
               <label for="putTestimonialDescription" class="form-label">Depoimento</label>
-              <input type="text" id="putTestimonialDescription"  class="form-control" placeholder="" required>
+              <input type="text" id="putTestimonialDescription" class="form-control" placeholder="" required>
             </div>
 
             <div class="mb-3">
@@ -249,7 +252,8 @@
             </div>
 
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-secondary putTestimonialButton" data-bs-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-secondary putTestimonialButton"
+                data-bs-dismiss="modal">Fechar</button>
 
               <button class="btn btn-primary" id="salvarAlteracoesTestimonial">Salvar</button>
             </div>
@@ -278,12 +282,12 @@
 
             <div class="mb-3">
               <label for="deleteTestimonialProfessionReference" class="form-label">Profissão</label>
-              <input type="text" id="deleteTestimonialProfessionReference"  class="form-control" placeholder="" required>
+              <input type="text" id="deleteTestimonialProfessionReference" class="form-control" placeholder="" required>
             </div>
 
             <div class="mb-3">
               <label for="deleteTestimonialDescription" class="form-label">Depoimento</label>
-              <input type="text" id="deleteTestimonialDescription"  class="form-control" placeholder="" required>
+              <input type="text" id="deleteTestimonialDescription" class="form-control" placeholder="" required>
             </div>
 
             <div class="mb-3">
@@ -301,24 +305,34 @@
       </div>
     </div>
   </div>
-  
+
 
   <!-- SECTION CLIENT TESTIMONIALS -->
   <section id="testimonials" class="py-5">
-    
+
   </section>
 
   <!-- SECTION CONTACT -->
   <section id="contato" class="py-5">
-    <div class="container">
+    <div>
       <h2>Contato</h2>
-      <form>
-        <input type="text" placeholder="Seu nome">
-        <input type="email" placeholder="Seu e-mail">
-        <textarea placeholder="Sua mensagem"></textarea>
-        <button type="submit">Enviar</button>
+      <form id="contactForm" action="https://formspree.io/f/xwkdeyjn" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome</label>
+          <input type="text" class="form-control" name="name" id="name" placeholder="Seu nome" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Seu e-mail" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Mensagem</label>
+          <textarea class="form-control" name="message" id="message" placeholder="Sua mensagem" required></textarea>
+        </div>
+        <button type="submit" id="my-form-status" class="btn btn-primary">Enviar</button>
       </form>
     </div>
+    </form>
   </section>
 
   <!-- FOOTER  -->
@@ -328,7 +342,10 @@
 
   <script src="public/javascript/app.js"></script>
   <script src="public/javascript/testimonialScript.js"></script>
-  
+  <script src="public/javascript//sendMail.js"></script>
+
+  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+
 </body>
 
 </html>
