@@ -12,36 +12,69 @@
 
 <body>
   <!-- HEADER -->
-  <header class="mb-4">
-    <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+  <header class="mb-4 custom-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio">Nome do Portfólio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#inicio">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projetos">Projetos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
   <!-- SECTION BEGNING  -->
-  <section id="inicio" class="bg-light py-5">
+  <section id="inicio" class="bg-info py-5 mb-2">
     <div class="container text-center">
-      <h1>Nome do Portfólio</h1>
-      <p>Breve descrição do que você faz</p>
-      <a href="#contato">Entre em contato</a>
+      <h1 class="text-light">Nome do Portfólio</h1>
+      <p class="text-light">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e
+        vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os
+        embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também
+        ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60,
+        quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser
+        integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+      <a class="btn btn-light" href="#contato">Entre em contato</a>
     </div>
   </section>
 
   <!-- SECTION ABOUT -->
-  <section id="sobre" class="py-5">
-    <div class="container">
-      <h2>Sobre</h2>
-      <p>Informações sobre você, suas habilidades e experiência.</p>
+  <section id="sobre" class="bg-info py-5 mb-2">
+    <div class="container text-center">
+      <h2 class="text-light">Sobre</h2>
+      <p class="text-light">Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto randômico. Com mais
+        de 2000 anos, suas raízes podem ser encontradas em uma obra de literatura latina clássica datada de 45 AC.
+        Richard McClintock, um professor de latim do Hampden-Sydney College na Virginia, pesquisou uma das mais obscuras
+        palavras em latim, consectetur, oriunda de uma passagem de Lorem Ipsum, e, procurando por entre citações da
+        palavra na literatura clássica, descobriu a sua indubitável origem. Lorem Ipsum vem das seções 1.10.32 e 1.10.33
+        do "de Finibus Bonorum et Malorum" (Os Extremos do Bem e do Mal), de Cícero, escrito em 45 AC. Este livro é um
+        tratado de teoria da ética muito popular na época da Renascença. A primeira linha de Lorem Ipsum, "Lorem Ipsum
+        dolor sit amet..." vem de uma linha na seção 1.10.32.
+
+        O trecho padrão original de Lorem Ipsum, usado desde o século XVI, está reproduzido abaixo para os interessados.
+        Seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cicero também foram reproduzidas abaixo em sua
+        forma exata original, acompanhada das versões para o inglês da tradução feita por H. Rackham em 1914.</p>
     </div>
   </section>
 
   <!-- Add ProjectButton -->
-  <div class="container">
+  <div class="container text-center">
     <h2>Projetos</h2>
     <button id="addProjectButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
       data-bs-target="#projectModal">Adicionar Projeto</button>
@@ -165,12 +198,12 @@
   </div>
 
   <!-- SECTION PROJECTS -->
-  <section id="projetos" class="bg-light py-5">
+  <section id="projetos" class="py-5 mb-2">
 
   </section>
 
   <!-- Add Testimonial Button -->
-  <div class="container">
+  <div class="container text-center">
     <h2>Depoimentos</h2>
     <button id="addTestimonialButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
       data-bs-target="#testimonialModal">Adicionar depoimento</button>
@@ -308,36 +341,43 @@
 
 
   <!-- SECTION CLIENT TESTIMONIALS -->
-  <section id="testimonials" class="py-5">
+  <section id="testimonials" class="py-5 mb-2">
 
   </section>
 
   <!-- SECTION CONTACT -->
   <section id="contato" class="py-5">
-    <div>
-      <h2>Contato</h2>
-      <form id="contactForm" action="https://formspree.io/f/xwkdeyjn" method="POST">
-        <div class="mb-3">
-          <label for="name" class="form-label">Nome</label>
-          <input type="text" class="form-control" name="name" id="name" placeholder="Seu nome" required>
+    <div class="container">
+      <h2 class="text-center">Contato</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form id="contactForm" action="https://formspree.io/f/xwkdeyjn" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nome</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Seu nome" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Seu e-mail" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Mensagem</label>
+              <textarea class="form-control" name="message" id="message" placeholder="Sua mensagem" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" id="my-form-status" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">E-mail</label>
-          <input type="email" class="form-control" name="email" id="email" placeholder="Seu e-mail" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Mensagem</label>
-          <textarea class="form-control" name="message" id="message" placeholder="Sua mensagem" required></textarea>
-        </div>
-        <button type="submit" id="my-form-status" class="btn btn-primary">Enviar</button>
-      </form>
+      </div>
     </div>
-    </form>
   </section>
 
   <!-- FOOTER  -->
-  <footer>
-    <p>&copy; 2023 Seu Nome</p>
+  <footer class="bg-info py-3">
+    <div class="container text-center">
+      <p>&copy; <span id="current-year"></span> Seu Nome</p>
+    </div>
   </footer>
 
   <script src="public/javascript/app.js"></script>
