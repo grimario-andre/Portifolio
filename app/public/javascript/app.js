@@ -26,11 +26,19 @@ projectForm.addEventListener('submit', (e) => {
   // Criar um novo elemento section com os detalhes do projeto
   const newProjectSection = document.createElement('section');
   newProjectSection.innerHTML = `
-    <h2>${projectName}</h2>
-    <p>${projectDescription}</p>
-    <a href="${projectLink}">Ver projeto</a>
-    <button class="btn btn-alterar">Alterar</button>
-    <button class="btn btn-deletar">Deletar</button>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 p-2">
+          <h2 class="display-4 text-primary fw-bold">${projectName}</h2>
+          <p>${projectDescription}</p>
+          <a href="${projectLink}" target="_blank" title="link do Projeto" class="btn btn-primary">Ver projeto</a>
+          <button class="btn btn-alterar btn-warning">Alterar</button>
+          <button class="btn btn-deletar btn-danger">Deletar</button>
+        </div>
+      </div>
+    </div>
+    
   `;
 
   // Adicionar o novo projeto à seção de projetos
@@ -101,11 +109,19 @@ salvarAlteracoesButton.addEventListener('click', () => {
   // Criar um novo elemento section com os detalhes atualizados do projeto
   const projetoAtualizado = document.createElement('section');
   projetoAtualizado.innerHTML = `
-    <h2>${projetoAtual.nome}</h2>
-    <p>${projetoAtual.descricao}</p>
-    <a href="${projetoAtual.link}">Ver projeto</a>
-    <button class="btn btn-primary btn-alterar" data-bs-toggle="modal" data-bs-target="#putModal">Alterar</button>
-    <button class="btn btn-primary btn-deletar" data-bs-toggle="modal" data-bs-target="#putModal">Deletar</button>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 p-2">
+        <h2 class="display-4 text-primary fw-bold">${projetoAtual.nome}</h2>
+        <p>${projetoAtual.descricao}</p>
+        <a href="${projetoAtual.link}" target="_blank" title="link do Projeto" class="btn btn-primary">Ver projeto</a>
+        <button class="btn btn-warning btn-alterar" data-bs-toggle="modal" data-bs-target="#putModal">Alterar</button>
+        <button class="btn btn-danger btn-deletar" data-bs-toggle="modal" data-bs-target="#putModal">Deletar</button>
+      </div>
+    </div>
+  </div>
+    
   `;
 
   // Substituir o elemento anterior pelo projeto atualizado na seção de projetos
@@ -125,7 +141,7 @@ const deleteProjectDescriptionInput = document.getElementById('deleteProjectDesc
 const deleteProjectLinkInput = document.getElementById('deleteProjectLink');
 
 // Função para preencher os campos do modal de alteração com os valores atuais do projeto
-function preencherCamposDoModalDeletar(){
+function preencherCamposDoModalDeletar() {
   deleteProjectNameInput.value = projetoAtual.nome;
   deleteProjectDescriptionInput.value = projetoAtual.descricao;
   deleteProjectLinkInput.value = projetoAtual.link;
@@ -133,8 +149,8 @@ function preencherCamposDoModalDeletar(){
   const closeButton = document.querySelector('#deleteModal .btn-secondary');
 
   // Fechar o modal ao clicar no botão de fechar (x)
-  closeButton.addEventListener('click', () =>{
-    deleteModal.style.display= 'none';
+  closeButton.addEventListener('click', () => {
+    deleteModal.style.display = 'none';
   });
 
 }
@@ -145,9 +161,9 @@ projectsSection.addEventListener('click', (e) => {
   if (e.target.classList.contains('btn-deletar')) {
     // Obetnha os valores atuais do projeto
     projetoAtual = {
-      nome:     e.target.parentNode.querySelector('h2').textContent,
+      nome: e.target.parentNode.querySelector('h2').textContent,
       descricao: e.target.parentNode.querySelector('p').textContent,
-      link:     e.target.parentNode.querySelector('a').href
+      link: e.target.parentNode.querySelector('a').href
     }
 
     preencherCamposDoModalDeletar();
@@ -160,16 +176,23 @@ deletarAlteracoesButton.addEventListener('click', () => {
   // A lógica para deletar o projeto
   const projeto = document.querySelector(`#projetos a[href='${projetoAtual.link}']`);
   if (projeto) {
-    projeto.parentElement.remove(); 
+    projeto.parentElement.remove();
   }
-
-  alert('Projeto Excluído');
 
   // Feche o modal de deleção
   deleteModal.style.display = 'none';
+
+  alert('Projeto Excluído');
 });
 
 
 // ----------------------------------------------------------------------------------
+// Obtém o elemento <span> com o ID "current-year"
+const currentYearElement = document.getElementById('current-year');
 
+// Obtém o ano atual
+const currentYear = new Date().getFullYear();
+
+// Define o ano atual como o conteúdo do elemento <span>
+currentYearElement.textContent = currentYear;
 
